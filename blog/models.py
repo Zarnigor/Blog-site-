@@ -1,8 +1,12 @@
-from django.db.models import Model, CharField, TextField, ForeignKey, CASCADE, DateTimeField
+from django.contrib.auth.models import AbstractUser, User
+from django.db.models import Model, CharField, TextField, ForeignKey, CASCADE, DateTimeField, ImageField, OneToOneField
 
 
 class UserProfile(Model):
-    pass
+    user = OneToOneField(User, on_delete=CASCADE)
+    bio = TextField()
+    profile_picture = ImageField(upload_to="profile_pictures/", null=True, blank=True)
+    joined_date = DateTimeField(auto_now_add=True)
 
 
 class Category(Model):
