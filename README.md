@@ -25,20 +25,15 @@ This is a personal blog website built using Django and Bootstrap.
    ```sh
    cd yourblog
    ```
-3. Create a virtual environment and activate it:
+3. Install dependencies using Poetry:
    ```sh
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   poetry install
    ```
-4. Install dependencies:
-   ```sh
-   pip install -r requirements.txt
-   ```
-5. Apply database migrations:
+4. Apply database migrations:
    ```sh
    python manage.py migrate
    ```
-6. Run the development server:
+5. Run the development server:
    ```sh
    python manage.py runserver
    ```
