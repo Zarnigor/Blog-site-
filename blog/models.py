@@ -4,18 +4,10 @@ from django.db.models import Model, CharField, TextField, ForeignKey, CASCADE, D
 from accounts.models import UserProfile
 
 
-class Category(Model):
-    title = CharField(max_length=100)
-
-    class Meta:
-        verbose_name_plural = "Categories"
-
-
 class Post(Model):
     title = CharField(max_length=200)
     content = TextField()
     author = ForeignKey(UserProfile, CASCADE)
-    category = ForeignKey(Category, CASCADE)
     created_at = DateTimeField(auto_now_add=True)
     updated_at = DateTimeField(auto_now=True)
 
