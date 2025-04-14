@@ -1,7 +1,34 @@
 from django.contrib import messages
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
+
+
+def signin(request):
+    if request.method == "POST":
+        username = request.POST.get('your_name')
+        password = request.POST.get('your_pass')
+
+        print(username, password)
+        if not all ([username, password]):
+            messages.error(request, 'Fill the all gaps')
+            print(1)
+            return redirect('signin')
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            print(2)
+            return redirect('index')
+        else:
+            messages.error(request, 'Please register first')
+            print(3)
+            return redirect('signup')
+
+    print(4)
+    return render(request, 'accounts/signin.html')
+
 
 
 def signup(request):
