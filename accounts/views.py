@@ -10,23 +10,18 @@ def signin(request):
         username = request.POST.get('your_name')
         password = request.POST.get('your_pass')
 
-        print(username, password)
         if not all ([username, password]):
             messages.error(request, 'Fill the all gaps')
-            print(1)
             return redirect('signin')
 
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            print(2)
             return redirect('index')
         else:
             messages.error(request, 'Please register first')
-            print(3)
             return redirect('signup')
 
-    print(4)
     return render(request, 'accounts/signin.html')
 
 

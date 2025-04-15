@@ -34,10 +34,11 @@ https://templatemo.com/tm-553-xtra-blog
                         <i class="fas fa-home"></i>
                         Blog Home
                     </a></li>
-                    <li class="tm-nav-item"><a href="{% url "post-detail" %} class="tm-nav-link">
+                    <li class="tm-nav-item"><a href="{% url "post-detail" %}" class="tm-nav-link">
                         <i class="fas fa-pen"></i>
                         Single Post
-                    </a></li>
+                    </a>
+                    </li>
                     <li class="tm-nav-item"><a href="{% url 'about' %}" class="tm-nav-link">
                         <i class="fas fa-users"></i>
                         About Xtra
@@ -70,6 +71,26 @@ https://templatemo.com/tm-553-xtra-blog
     <div class="container-fluid">
         <main class="tm-main">
             <!-- Search form -->
+            <div class="row tm-row">
+            <div class="col-12 text-right">
+                <form method="POST" action="{% url 'logout' %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" style="background-color: #ff4d4d; color: white;
+                        border: none;
+                        padding: 10px 18px;
+                        font-size: 14px;
+                        font-weight: 600;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    ">Logout</button>
+                </form>
+            </div>
+        </div>
+        <br>
+
+
             <div class="row tm-row">
                 <div class="col-12">
                     <form method="GET" class="form-inline tm-mb-80 tm-search-form">

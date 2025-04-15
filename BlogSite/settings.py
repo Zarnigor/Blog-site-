@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+LOGIN_URL = 'signin'
 ROOT_URLCONF = 'BlogSite.urls'
 
 TEMPLATES = [
@@ -109,6 +110,8 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
