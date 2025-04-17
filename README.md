@@ -19,7 +19,7 @@ This is a personal blog website built using Django and Bootstrap.
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/yourblog.git
+   git clone https://github.com/zarnigor/blog-site.git
    ```
 2. Navigate to the project directory:
    ```sh
