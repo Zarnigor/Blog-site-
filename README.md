@@ -23,7 +23,7 @@ This is a personal blog website built using Django and Bootstrap.
    ```
 2. Navigate to the project directory:
    ```sh
-   cd yourblog
+   cd blog-site
    ```
 3. Install dependencies using Poetry:
    ```sh
