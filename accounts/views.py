@@ -61,3 +61,6 @@ def signup(request):
 
     return render(request, 'accounts/signup.html')
 
+
+def profile_page(request):
+    return render(request, 'accounts/profile.html')
