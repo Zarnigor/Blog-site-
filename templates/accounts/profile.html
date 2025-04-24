@@ -6,33 +6,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Profile</title>
-  <link rel="stylesheet" href="{% static "css/style_profile.css" %}" />
+  <link rel="stylesheet" href="{% static 'css/style_profile.css' %}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <div class="container">
     <h1>Profile</h1>
-    <p class="subtitle">I'm a creative PHP webdeveloper</p>
+    <p class="subtitle">{{ profile.bio }}</p>
 
     <div class="profile-section">
       <div class="about">
         <h2>About me</h2>
         <p>
-          I am an allround web developer. I am a senior programmer with good knowledge of front-end techniques.
-          Vitae sapien pellentesque habitant morbi tristique senectus et. Aenean sed adipiscing diam donec
-          adipiscing tristique risus.
+          {{ profile.bio }}
         </p>
       </div>
 
       <div class="photo">
-        <img src="profile.jpg" alt="Profile Photo" />
+        <img src="{{ profile.profile_picture.url }}" alt="Profile Photo" />
       </div>
 
       <div class="details">
         <h2>Details</h2>
-        <p><strong>Name:</strong> Hunter Norton</p>
-        <p><strong>Age:</strong> 33 years</p>
-        <p><strong>Location:</strong> 's-Hertogenbosch, The Netherlands, Earth</p>
+        <p><strong>Name:</strong> {{ profile.user.get_full_name }}</p>
+        <p><strong>Age:</strong> {{ profile.age }} years</p>
+        <p><strong>Location:</strong> {{ profile.location }}</p>
 
         <div class="social-icons">
           <a href="#"><i class="fab fa-facebook-f"></i></a>

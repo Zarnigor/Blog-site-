@@ -1,8 +1,11 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import User
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+
+from accounts.models import Profile
 
 
 def signin(request):
@@ -62,5 +65,7 @@ def signup(request):
     return render(request, 'accounts/signup.html')
 
 
+@login_required
 def profile_page(request):
-    return render(request, 'accounts/profile.html')
+    profile = get_object_or_404(Profile, user=request.user)
+    return render(request, 'accounts/profile.html', {'profile': profile})
