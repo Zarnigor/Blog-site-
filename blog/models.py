@@ -4,6 +4,6 @@ from django.db.models import Model, CASCADE, ForeignKey, DateTimeField, CharFiel
 
 class Comment(Model):
     title = CharField(max_length=200)
-    user = ForeignKey(User, on_delete=CASCADE)
+    author = ForeignKey(User, on_delete=CASCADE)
     created_at = DateTimeField(auto_now_add=True)
     content = TextField()
