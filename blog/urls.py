@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import CommentListCreateAPIView, PostViewSet
+from .views import CommentListCreateAPIView, PostViewSet, RegisterView
 
 router = DefaultRouter()
 router.register(r'posts', PostViewSet, basename='post')
@@ -8,5 +8,6 @@ router.register(r'posts', PostViewSet, basename='post')
 
 urlpatterns = [
     path('comments/', CommentListCreateAPIView.as_view()),
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('api/register/', RegisterView.as_view(), name='register')
 ]

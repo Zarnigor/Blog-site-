@@ -1,9 +1,9 @@
-from rest_framework.generics import ListCreateAPIView
+from rest_framework.generics import ListCreateAPIView, CreateAPIView
 from rest_framework.viewsets import ViewSet
 from rest_framework.permissions import IsAuthenticated
 
 from .models import Comment, Post
-from .serializers import CommentSerializer, PostSerializer
+from .serializers import CommentSerializer, PostSerializer, RegisterSerializer
 from .permissions import IsOwnerOrReadOnly
 
 
@@ -23,3 +23,6 @@ class PostViewSet(ViewSet):
 
     def perform_create(self, serializer):
         serializer.save(authod=self.request.user)
+
+class RegisterView(CreateAPIView):
+    serializer_class= RegisterSerializer
