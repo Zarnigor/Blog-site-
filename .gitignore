@@ -31,4 +31,4 @@ staticfiles/
 Thumbs.db
 
 # Virtual environment
-cleanenv/
+cleanenv/cleanenv/
