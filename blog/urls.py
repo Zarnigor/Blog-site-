@@ -9,5 +9,5 @@ router.register(r'posts', PostViewSet, basename='post')
 urlpatterns = [
     path('comments/', CommentListCreateAPIView.as_view()),
     path('', include(router.urls)),
-    path('api/register/', RegisterView.as_view(), name='register')
+    path('register/', RegisterView.as_view(), name='register')
 ]

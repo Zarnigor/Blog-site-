@@ -14,7 +14,7 @@ class PostSerializer(ModelSerializer):
 
     class Meta:
         model = Post
-        exclude = ['Post']
+        exclude = ['id']
 
 class RegisterSerializer(ModelSerializer):
     password = CharField(write_only=True)
